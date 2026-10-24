@@ -70,13 +70,42 @@ function render(){
  if(!filtered.length){list.innerHTML='<div class="empty">표시할 단어가 없어요.</div>';return}
  filtered.forEach(w=>{
   const card=document.createElement('section');card.className='word';
-  let swipeStartX=0,swipeStartY=0;
-  card.addEventListener('touchstart',e=>{const t=e.changedTouches[0];swipeStartX=t.clientX;swipeStartY=t.clientY},{passive:true});
-  card.addEventListener('touchend',e=>{
+  let swipeStartX=0,swipeStartY=0,swipeHandled=false;
+  card.style.touchAction='pan-y';
+  card.addEventListener('touchstart',e=>{
    if(!revealed.has(key))return;
+   const t=e.changedTouches[0];swipeStartX=t.clientX;swipeStartY=t.clientY;swipeHandled=false;
+   card.style.transition='none';
+  },{passive:true});
+  card.addEventListener('touchmove',e=>{
+   if(!revealed.has(key)||swipeHandled)return;
    const t=e.changedTouches[0],dx=t.clientX-swipeStartX,dy=t.clientY-swipeStartY;
-   if(Math.abs(dx)>=60&&Math.abs(dy)<55){e.preventDefault();gradeVocabWord(w,dx>0?'known':'unknown');}
+   if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>8){
+    card.style.transform=`translateX(${dx}px) rotate(${dx*.035}deg)`;
+    card.style.opacity=String(Math.max(.55,1-Math.abs(dx)/420));
+    card.style.borderColor=dx>0?'#16a34a':'#dc2626';
+   }
+  },{passive:true});
+  card.addEventListener('touchend',e=>{
+   if(!revealed.has(key)||swipeHandled)return;
+   const t=e.changedTouches[0],dx=t.clientX-swipeStartX,dy=t.clientY-swipeStartY;
+   if(Math.abs(dx)>=65&&Math.abs(dx)>Math.abs(dy)*1.25&&Math.abs(dy)<80){
+    e.preventDefault();swipeHandled=true;
+    const grade=dx>0?'known':'unknown';
+    card.style.transition='transform .18s ease-out, opacity .18s ease-out, border-color .18s ease-out';
+    card.style.transform=`translateX(${dx>0?'':'-'}110%) rotate(${dx>0?8:-8}deg)`;
+    card.style.opacity='0.15';
+    card.style.borderColor=dx>0?'#16a34a':'#dc2626';
+    setTimeout(()=>gradeVocabWord(w,grade),180);
+   }else{
+    card.style.transition='transform .18s ease-out, opacity .18s ease-out, border-color .18s ease-out';
+    card.style.transform='';card.style.opacity='';card.style.borderColor='';
+   }
   },{passive:false});
+  card.addEventListener('touchcancel',()=>{
+   card.style.transition='transform .18s ease-out, opacity .18s ease-out, border-color .18s ease-out';
+   card.style.transform='';card.style.opacity='';card.style.borderColor='';
+  },{passive:true});
   const top=document.createElement('div');top.className='top';
   const number=document.createElement('span');number.textContent=`NO. ${w.no}`;
   const tag=document.createElement('span');tag.textContent=swapped?'한글 → 영어':'영어 → 한글';
