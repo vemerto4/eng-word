@@ -14,7 +14,8 @@ main{padding:4px 8px calc(86px + env(safe-area-inset-bottom));max-width:900px;ma
 .en{font-size:19px;font-weight:750}.ko{font-size:17px;color:#4c5561}.hidden{color:#8a929d;background:#f1f3f5;text-align:center;justify-content:center;font-size:14px;font-weight:550;min-height:42px}.leftText{pointer-events:none}
 @media(max-width:380px){.word{padding:8px}.pair{gap:4px}.en{font-size:17px}.ko{font-size:15px}.line{padding:9px 5px}}
 
-.vocabHorizontal{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;align-items:stretch;margin-top:8px}.vocabHorizontal>.line,.vocabHorizontal>div{min-width:0;min-height:64px;display:flex;align-items:center;justify-content:center;text-align:center;overflow-wrap:anywhere;border-radius:10px;padding:10px 8px;box-sizing:border-box}.vocabHorizontal button{width:100%;height:100%;min-height:64px;font-size:clamp(13px,3.6vw,17px)}.vocabHorizontal .vocabAnswerSlot{display:flex;align-items:stretch;justify-content:stretch;min-width:0}.vocabHorizontal .vocabAnswerSlot>.line{height:100%;min-height:64px;justify-content:center;text-align:center;padding:10px 6px;line-height:1.25}.vocabAnswerShown{background:#f1f7ff;color:#174ea6;font-weight:800;font-size:clamp(14px,3.8vw,18px);cursor:pointer}
+.selfGradeRow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.selfGrade{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:66px;padding:9px 6px;border:2px solid #e1e5eb;border-radius:12px;background:#fff;font-size:14px}.selfGrade strong{font-size:15px}.selfGrade small{font-size:11px;color:#69717d;font-weight:500}.selfGrade.known{background:#f0fbf4;border-color:#b7e4c7;color:#187344}.selfGrade.unknown{background:#fff4f3;border-color:#f3c0bc;color:#b42318}.selfGrade.selected{box-shadow:inset 0 0 0 1px currentColor;border-width:2px}@media(max-width:380px){.selfGradeRow{gap:6px}.selfGrade{min-height:62px}.selfGrade strong{font-size:13px}}
+.vocabHorizontal{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;align-items:stretch;margin-top:8px}.vocabHorizontal>.line,.vocabHorizontal>div{min-width:0;min-height:64px;display:flex;align-items:center;justify-content:center;text-align:center;overflow-wrap:anywhere;border-radius:10px;padding:10px 8px;box-sizing:border-box}.vocabHorizontal button{width:100%;height:100%;min-height:64px;font-size:clamp(13px,3.6vw,17px)}.vocabHorizontal .vocabAnswerSlot{display:flex;align-items:stretch;justify-content:stretch;min-width:0}.vocabHorizontal .vocabAnswerSlot>.line{height:100%;min-height:64px;justify-content:center;text-align:center;padding:10px 6px;line-height:1.25}.vocabAnswerShown{background:#f1f7ff;color:#174ea6;font-weight:800;font-size:clamp(14px,3.8vw,18px);cursor:pointer}.vocabAnswerSlot.inlineGradeSlot{display:grid;grid-template-columns:42px minmax(0,1fr) 42px;gap:5px;align-items:stretch}.inlineGradeSlot .vocabAnswerShown{min-width:0;width:100%;padding:5px 2px;font-size:clamp(12px,3.2vw,16px);overflow-wrap:anywhere}.inlineOX{padding:4px 1px!important;min-width:0;width:100%;min-height:64px;border-radius:9px;font-size:17px;font-weight:850;display:flex;align-items:center;justify-content:center}.inlineOX.known{background:#f0fbf4;border-color:#b7e4c7;color:#187344}.inlineOX.unknown{background:#fff4f3;border-color:#f3c0bc;color:#b42318}.inlineOX.selected{box-shadow:inset 0 0 0 1px currentColor;border-width:2px}@media(max-width:380px){.vocabAnswerSlot.inlineGradeSlot{grid-template-columns:38px minmax(0,1fr) 38px}.inlineOX{font-size:15px}}
 .writeHorizontal{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr) minmax(0,1fr);gap:6px;align-items:stretch}.writeHorizontal .line{padding:8px 5px;font-size:clamp(12px,3.4vw,17px);justify-content:center;text-align:center;overflow-wrap:anywhere;min-height:78px}.writeHorizontal .middleSlot{display:flex;flex-direction:column;align-items:stretch;min-width:0;position:relative}.writeHorizontal .inlineWriteCanvas{height:78px;min-width:0}.writeHorizontal .middleSlot .inlineWriteCanvas{width:100%}.writeHorizontal .middleSlot .answerShownInPlace{min-height:78px;box-sizing:border-box}.writeHorizontal .revealSlot{display:flex;align-items:stretch;min-width:0}.writeHorizontal .revealSlot button{width:100%;padding:6px 4px;font-size:clamp(11px,3.2vw,15px);overflow-wrap:anywhere}.writeHorizontal .answerShownInPlace{background:#f1f7ff;color:#174ea6;border-radius:9px;padding:7px 4px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:clamp(12px,3.4vw,17px);font-weight:800;overflow-wrap:anywhere;width:100%;min-width:0}.inlineWriteTools{margin-top:7px;border-top:1px solid #f0f1f3;padding-top:6px}.inlineWriteToggle{padding:5px 9px;font-size:12px;border-radius:9px;background:#f7f8fa;border-color:#e7e9ed}.inlineWriteArea{margin-top:7px}.inlineWriteCanvas{display:block;width:100%;height:86px;border:1px solid #dfe3e8;border-radius:9px;background:repeating-linear-gradient(to bottom,#fff 0,#fff 26px,#edf0f4 27px,#fff 28px);touch-action:none}.inlineWriteActions{display:flex;align-items:center;gap:4px;flex-wrap:wrap;margin-top:5px}.inlineWriteActions button{flex:1;min-width:0;padding:5px 4px;font-size:11px;white-space:nowrap}.inlineWriteHint{display:none;font-size:11px;color:#69717d}
 
 .bottom{position:sticky;bottom:0;background:#f5f6f8ed;backdrop-filter:blur(10px);padding:10px 14px calc(10px + env(safe-area-inset-bottom));display:flex;gap:8px;justify-content:center;border-top:1px solid #e8eaee}
@@ -63,14 +64,8 @@ function render(){
   const card=document.createElement('section');card.className='word';
   const top=document.createElement('div');top.className='top';
   const number=document.createElement('span');number.textContent=`NO. ${w.no}`;
-  const controls=document.createElement('div');controls.style.display='flex';controls.style.gap='6px';controls.style.alignItems='center';
   const tag=document.createElement('span');tag.textContent=swapped?'한글 → 영어':'영어 → 한글';
-  const mark=document.createElement('button');mark.style.padding='4px 8px';mark.style.fontSize='12px';mark.textContent=unknown.has(w.no)?'✓ 모름':'모르는 단어';mark.setAttribute('aria-pressed',String(unknown.has(w.no)));
-  if(unknown.has(w.no)){mark.style.background='#fff0f0';mark.style.borderColor='#efb4b4';mark.style.color='#b42318'}
-  mark.onclick=()=>{if(unknown.has(w.no))unknown.delete(w.no);else unknown.add(w.no);saveUnknown();render();renderStats()};
-  const doneBtn=document.createElement('button');doneBtn.style.padding='4px 8px';doneBtn.style.fontSize='12px';doneBtn.textContent=done.has(w.no)?'✓ 학습완료':'학습완료';
-  doneBtn.onclick=()=>{if(!progress[dayKey()])progress[dayKey()]=[];const set=new Set(progress[dayKey()]);if(set.has(w.no))set.delete(w.no);else set.add(w.no);progress[dayKey()]=[...set];saveProgress();render();renderStats()};
-  controls.append(tag,mark,doneBtn);top.append(number,controls);
+  top.append(number,tag);
   const pair=document.createElement('div');pair.className='vocabHorizontal';
   const left=document.createElement('div');left.className='line '+(swapped?'ko':'en')+' leftText';left.textContent=swapped?w.ko:w.en;
   const side=swapped?'en':'ko';const key=`${w.no}:${side}`;
@@ -84,13 +79,20 @@ function render(){
     speak(w.en);
     const answer=document.createElement('button');answer.type='button';answer.className='line vocabAnswerShown';answer.textContent=swapped?w.en:w.ko;answer.setAttribute('aria-label','정답 다시 감추기');
     answer.onclick=()=>{revealed.delete(key);rightSlot.replaceChildren(makeRevealButton())};
-    rightSlot.replaceChildren(answer);
+    render();
    };
    return right;
   }
   if(revealed.has(key)){
-   const answer=document.createElement('button');answer.type='button';answer.className='line vocabAnswerShown';answer.textContent=swapped?w.en:w.ko;answer.setAttribute('aria-label','정답 다시 감추기');
-   answer.onclick=()=>{revealed.delete(key);rightSlot.replaceChildren(makeRevealButton())};rightSlot.append(answer);
+   rightSlot.classList.add('inlineGradeSlot');
+   const knownBtn=document.createElement('button');knownBtn.type='button';knownBtn.className='inlineOX known';knownBtn.textContent='O';knownBtn.title='학습완료';knownBtn.setAttribute('aria-label','학습완료');
+   const unknownBtn=document.createElement('button');unknownBtn.type='button';unknownBtn.className='inlineOX unknown';unknownBtn.textContent='X';unknownBtn.title='모르는 단어';unknownBtn.setAttribute('aria-label','모르는 단어');
+   if(done.has(w.no)){knownBtn.classList.add('selected');knownBtn.textContent='✓'}
+   if(unknown.has(w.no)){unknownBtn.classList.add('selected');unknownBtn.textContent='✕'}
+   const answer=document.createElement('div');answer.className='line vocabAnswerShown';answer.textContent=swapped?w.en:w.ko;answer.setAttribute('aria-label','표시된 정답');
+   knownBtn.onclick=()=>{if(!progress[dayKey()])progress[dayKey()]=[];const set=new Set(progress[dayKey()]);set.add(w.no);progress[dayKey()]=[...set];unknown.delete(w.no);saveProgress();saveUnknown();render();renderStats()};
+   unknownBtn.onclick=()=>{if(!progress[dayKey()])progress[dayKey()]=[];const set=new Set(progress[dayKey()]);set.delete(w.no);progress[dayKey()]=[...set];unknown.add(w.no);saveProgress();saveUnknown();render();renderStats()};
+   rightSlot.append(knownBtn,answer,unknownBtn);
   }else rightSlot.append(makeRevealButton());
   pair.append(left,rightSlot);
   card.append(top,pair);
